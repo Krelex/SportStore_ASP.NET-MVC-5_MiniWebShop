@@ -1,0 +1,19 @@
+﻿@model SportStore.Domain.Entities.Cart
+
+
+<li class="navbar-text navbar-right chek-btn">
+    <a>Your cart:</a>
+    @Model.Lines.Sum(l => l.Quantity)  @if (@Model.Lines.Sum(l => l.Quantity) <= 1)
+    { <a>Item</a> }
+    else
+    { <a>Items</a>}
+    @Model.ComputeTotalValue().ToString("c")
+</li>
+<li class="nav-item">
+    @Html.ActionLink("Chekout", "Index", "Cart",
+        new {retrunUrl = Request.Url.PathAndQuery },
+        new { @class = "btn btn-outline-light navbar-btn " })
+</li>
+
+
+
