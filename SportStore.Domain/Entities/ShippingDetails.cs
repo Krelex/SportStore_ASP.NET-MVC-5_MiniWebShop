@@ -22,6 +22,9 @@ namespace SportStore.Domain.Entities
         [Display(Name = "Line 3")]
         public string Line3 { get; set; }
 
+        [Display(Name = "Line 4")]
+        public string Line4 { get; set; }
+
         [Required(ErrorMessage = "Please enter a city name")]
         public string City { get; set; }
 
