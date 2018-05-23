@@ -41,6 +41,8 @@ namespace SportStore.WebUI.Controllers
 
             model.CurrentCategory = category;
 
+            ViewBag.CurrentCategory = category;
+
             return View(model);
         }
     }

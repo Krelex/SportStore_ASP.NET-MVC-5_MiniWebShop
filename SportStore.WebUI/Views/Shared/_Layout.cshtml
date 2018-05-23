@@ -1,4 +1,4 @@
-﻿@model SportStore.WebUI.Models.ProductsListViewModel
+﻿
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +22,9 @@
         .chek-btn{
             margin-right: 10px;
         }
+        .disable{
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -42,7 +45,7 @@
         <div class="row">
             <div class="dropdown col-md-4">
                 <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    SportStore: @(@Model.CurrentCategory == null ? "Home" : @Model.CurrentCategory )
+                    SportStore:  @(@ViewBag.CurrentCategory == null ? "Home" : @ViewBag.CurrentCategory)
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     @Html.Action("Menu", "Nav")
