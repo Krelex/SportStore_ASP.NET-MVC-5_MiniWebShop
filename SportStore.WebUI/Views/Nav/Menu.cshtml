@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<string>
 
+<h6 class="dropdown-header">--All--</h6>
   
 @Html.ActionLink("Home", "List", "Product", null,
-     new { @class = "btn btn-outline-primary btn-block " +   (ViewBag.categorie == null ? "active" : "") })
+     new { @class = "dropdown-item " +   (ViewBag.categorie == null ? "active" : "") })
 
-
+<h6 class="dropdown-header">--Categories--</h6>
 
 @foreach (var link in Model)
 {
@@ -15,11 +16,6 @@
        category = link,
        page = 1
    },
-  new { @class = "btn btn-outline-primary btn-block " + (link == ViewBag.categorie ? "active" : "") }
+  new { @class = "dropdown-item " + (link == ViewBag.categorie ? "active" : "") }
     )
-
-
-
-
-
 }
