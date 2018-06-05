@@ -248,6 +248,7 @@
       <BrowseToURL>~/Cart/Checkout</BrowseToURL>
     </Content>
     <Content Include="Views\Cart\Completed.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
