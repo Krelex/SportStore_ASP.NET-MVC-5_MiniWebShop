@@ -6,6 +6,7 @@ using SportStore.Domain.Entities;
 using SportStore.WebUI.Controllers;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
 
 namespace SportStore.UnitTest
 {
@@ -81,6 +82,31 @@ namespace SportStore.UnitTest
             Product result = ((Product)target.Edit(4).ViewData.Model);
             //Assert
             Assert.IsNull(result);
+        }
+
+        [TestMethod]
+        public void Can_Update_Product_Repo()
+        {
+            //Arrange
+            Mock<IProductsRepository> mock = new Mock<IProductsRepository>();
+            mock.Setup(m => m.Product).Returns(new Product[]
+            {
+                new Product {ProductID = 1, Name = "P1" },
+                new Product {ProductID = 2, Name = "P2" },
+                new Product {ProductID = 3, Name = "P3" }
+
+            });
+
+            Product product = new Product() { Name = "Test" };
+
+            AdminController target = new AdminController(mock.Object);
+
+            //Act
+            ActionResult result = target.Edit(product);
+
+            //Assert
+            mock.Verify(m => m.SaveProduct(product));
+            Assert.IsNotInstanceOfType(result, typeof(ViewResult));
         }
     }
 }
