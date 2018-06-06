@@ -1,4 +1,5 @@
 ﻿using SportStore.Domain.Abstract;
+using SportStore.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,13 @@ namespace SportStore.WebUI.Controllers
         public ViewResult Index()
         {
             return View(_repository.Product);
+        }
+
+        public ViewResult Edit(int id)
+        {
+            Product prod = _repository.Product.Where(p => p.ProductID == id).SingleOrDefault();
+
+            return View(prod);
         }
     }
 }
