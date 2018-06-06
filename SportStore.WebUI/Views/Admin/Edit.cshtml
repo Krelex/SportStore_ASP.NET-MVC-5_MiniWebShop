@@ -18,18 +18,22 @@
                 <div class="form-group">
                     <label>Name :</label>
                     <input class="form-control" type="text" name="Name" value="@Model.Name" />
+                    @Html.ValidationMessage("Name")
                 </div>
                 <div class="form-group">
                     <label>Description :</label>
-                    <textarea class="form-control" rows="3" type="" name="Description">@Model.Description.Trim()</textarea>
+                    <textarea class="form-control" rows="3"  name="Description">@Model.Description</textarea>
+                    @Html.ValidationMessage("Description")
                 </div>
                 <div class="form-group">
                     <label>Price :</label>
                     <input class="form-control" type="text" name="Price" value="@Model.Price" />
+                    @Html.ValidationMessage("Price")
                 </div>
                 <div class="form-group">
                     <label>Category :</label>
-                    <input class="form-control" type="text" name="Category" value="@Model.Category" />
+                    <input class="form-control" type="text" name="Category" value="@Model.Category"/>
+                    @Html.ValidationSummary("Category")
                 </div>
             </div>
 
