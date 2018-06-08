@@ -20,6 +20,18 @@ namespace SportStore.Domain.Concrete
             }
         }
 
+        public Product DeleteProduct(int productID)
+        {
+            Product DelProduct = contex.Products.Find(productID);
+            if(DelProduct != null)
+            {
+                contex.Products.Remove(DelProduct);
+                contex.SaveChanges();
+            }
+
+            return DelProduct;
+        }
+
         public void SaveProduct(Product product)
         {
             if (product.ProductID == 0)
@@ -39,7 +51,6 @@ namespace SportStore.Domain.Concrete
                 }
             }
             contex.SaveChanges();
-
         }
     }
 }

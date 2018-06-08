@@ -21,7 +21,7 @@
         @using (Html.BeginForm("Edit","Admin"))
         {
             <div class="card-body">
-                @Html.HiddenFor(p => p. ProductID)
+                @Html.HiddenFor(p => p.ProductID)
                 <div class="form-group">
                     <label>Name :</label>
                     <input class="form-control" type="text" name="Name" value="@Model.Name" />
