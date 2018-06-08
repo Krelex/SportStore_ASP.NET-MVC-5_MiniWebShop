@@ -49,9 +49,9 @@ namespace SportStore.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete()
+        public ActionResult Delete(int productId)
         {
-            int productId =int.Parse(Request.Form["productId"]);
+            //int productId =int.Parse(Request.Form["productId"]);
             Product deleteProduct = _repository.Product.Where(pr => pr.ProductID == productId).SingleOrDefault();
 
             if(deleteProduct != null)
