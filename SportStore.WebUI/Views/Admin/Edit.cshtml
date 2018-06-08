@@ -7,11 +7,18 @@
 
 <div class="card">
     <div class="card-header">
-        <h2 class="text-center">Edit @Model.Name</h2>
+        @if (Model.Name != null)
+        {
+            <h2 class="text-center">Edit @Model.Name</h2>
+        }
+        else
+        {
+            <h2 class="text-center">Create</h2>
+        }
     </div>
 
     
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("Edit","Admin"))
         {
             <div class="card-body">
                 @Html.HiddenFor(p => p. ProductID)

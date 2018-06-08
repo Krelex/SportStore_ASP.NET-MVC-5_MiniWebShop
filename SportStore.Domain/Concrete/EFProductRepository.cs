@@ -24,6 +24,8 @@ namespace SportStore.Domain.Concrete
         {
             if (product.ProductID == 0)
             {
+                //int maxID = contex.Products.Max(p => p.ProductID);
+                //product.ProductID = maxID + 1;
                 contex.Products.Add(product);
             }else
             {
@@ -35,8 +37,9 @@ namespace SportStore.Domain.Concrete
                     dbEntry.Category = product.Category;
                     dbEntry.Price = product.Price;
                 }
-                contex.SaveChanges();
             }
+            contex.SaveChanges();
+
         }
     }
 }
