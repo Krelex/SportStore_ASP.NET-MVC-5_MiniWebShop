@@ -1,6 +1,13 @@
 ﻿@model SportStore.Domain.Entities.Product
 
 <div class="text-center alert alert-dark">
+    @if(Model.ImageData != null)
+    {
+        <div class="float-left" style="margin-right: 10px">
+            <img class="img-thumbnail" width="75" height="75"
+                 src="~/Product/GetImage?productId=@Model.ProductID" />
+        </div>
+    }
     <h3>
         <strong> @Model.Name</strong>
         <span class="pull-right label-pill label label-primary">@Model.Price.ToString("c")</span>
