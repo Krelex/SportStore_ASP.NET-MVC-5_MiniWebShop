@@ -5,7 +5,8 @@ using System.Web;
 
 namespace SportStore.WebUI.Infrastructure.Abstract
 {
-    public class IAuthProvider
+    public interface  IAuthProvider
     {
+        bool Authenticate(string name, string password);
     }
 }
