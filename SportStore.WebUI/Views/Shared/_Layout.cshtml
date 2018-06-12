@@ -25,6 +25,10 @@
         .disable{
             pointer-events: none;
         }
+        .btn-category{
+            width: 100%;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -43,9 +47,9 @@
 
     <div class="container body-content">
         <div class="row">
-            <div class="dropdown col-md-4">
-                <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    SportStore:  @(@ViewBag.CurrentCategory == null ? "Home" : @ViewBag.CurrentCategory)
+            <div class="dropdown col-md-4 col-sm-12">
+                <button class="btn btn-primary btn-lg dropdown-toggle btn-category" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Category:  @(@ViewBag.CurrentCategory == null ? "Home" : @ViewBag.CurrentCategory)
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     @Html.Action("Menu", "Nav")
