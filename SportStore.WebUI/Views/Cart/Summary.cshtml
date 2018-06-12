@@ -10,9 +10,21 @@
     @Model.ComputeTotalValue().ToString("c")
 </li>
 <li class="nav-item">
+    
+    @if (Request.Url.AbsolutePath == "/Cart/Index")
+    {
     @Html.ActionLink("Chekout", "Index", "Cart",
-        new {returnUrl = Request.Url.PathAndQuery },
-        new { @class = "btn btn-outline-light navbar-btn " })
+    new { returnUrl = Request.Url.PathAndQuery },
+    new { @class = "btn btn-outline-light navbar-btn disable" })
+    }
+    else
+    {
+    @Html.ActionLink("Chekout", "Index", "Cart",
+    new { returnUrl = Request.Url.PathAndQuery },
+    new { @class = "btn btn-outline-light navbar-btn " })
+    }
+
+
 </li>
 
 

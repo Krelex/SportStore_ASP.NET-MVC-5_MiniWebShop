@@ -54,7 +54,7 @@ namespace SportStore.WebUI.Controllers
         }
 
         [HttpPost]
-        public RedirectToRouteResult AddToCart(Cart cart,int productId, string returnUrl)
+        public RedirectResult AddToCart(Cart cart,int productId, string returnUrl)
         {
             Product product = _repository.Product
                 .FirstOrDefault(p => p.ProductID == productId);
@@ -64,7 +64,7 @@ namespace SportStore.WebUI.Controllers
                 cart.AddItem(product, 1);
             }
 
-            return RedirectToAction("Index", new { returnUrl });
+            return Redirect(returnUrl);
         }
 
         public RedirectToRouteResult RemoveFromCart(Cart cart, int productId, string returnUrl)
