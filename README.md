@@ -1,5 +1,7 @@
 ## How to use :
+
 *Download or clone repo, start it with ViusalStudio, set it as StartUp project and start debuging
+
 *Or see it on this link in deployment. If you want use admin layer and make changes go to (~/admin/index) and use this credential username: "admin", password: "secret". 
 
 ## Description :
